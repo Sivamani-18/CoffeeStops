@@ -1,0 +1,7 @@
+.error{
+  padding: 0px;
+}
+
+.form-control.is-invalid:focus, .was-validated .form-control:invalid:focus{
+  box-shadow: 0 0 0 0.2rem transparent;
+}
