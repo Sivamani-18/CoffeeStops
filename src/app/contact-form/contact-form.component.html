@@ -1,0 +1,72 @@
+<div style="height: auto;background-image: url(&quot;assets/img/coffee3.jpg&quot;);">
+  <div style="background-color: rgba(58,61,70,0.95);">
+    <div class="container">
+      <div style="height: 30px;"></div>
+      <div class="intro">
+        <h2 class="text-center login-body-color">Get in touch</h2>
+        <p class="text-center login-body-color">Let's talk about your project</p>
+      </div>
+      <div style="height: 30px;"></div>
+      <div>
+        <form id="frm_contact" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <div class="col">
+              <h2 class="text-left h4 login-body-color"><i class="fa fa-envelope login-body-color"></i> Contact Us<small><small class="required-input">&nbsp;(*required)</small></small>
+              </h2>
+              <div class="form-row">
+                <div class="col">
+                  <div class="form-group"><label class="login-body-color" for="from-name">Name</label><span class="login-body-color" for="from-name">*</span>
+                    <div class="input-form-al">
+                      <div><span class="span-group-text span-login-color"><i class="fa fa-user-o login-icon-color"></i></span></div>
+                      <div class="con-btn-size" name="user_email" placeholder="Email Address"><input class="form-control con-btn-size" type="text" id="from-name" formControlName="firstName" placeholder="Full Name" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"></div>
+                    </div>
+                  </div>
+                  <div *ngIf="submitted && f.firstName.errors" class="error">
+                    <div *ngIf="f.firstName.errors.required">Full Name is required</div>
+                    <div *ngIf="f.firstName.errors.pattern">Please input alphabet characters only</div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group"><label class="login-body-color" for="from-email">Email</label><span class="login-body-color" for="from-email">*</span>
+                    <div class="input-form-al">
+                      <div><span class="span-group-text span-login-color"><i class="fa fa-envelope-o login-icon-color"></i></span></div>
+                      <div class="con-btn-size"><input class="form-control con-btn-size" type="text" id="from-email"  formControlName="email" placeholder="Email Address" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"></div>
+                    </div>
+                  </div>
+                  <div *ngIf="submitted && f.email.errors" class="error">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                </div>
+                </div>
+                <div class="col">
+                  <div class="form-group"><label class="login-body-color" for="from-phone">Phone</label><span class="login-body-color">*</span>
+                    <div class="input-form-al">
+                      <div><span class="span-group-text span-login-color"><i class="fa fa-phone login-icon-color"></i></span></div>
+                      <div class="con-btn-size" name="user_email" placeholder="Email Address"><input class="form-control con-btn-size" type="text" id="from-phone" formControlName="phone"  placeholder="Primary Phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"></div>
+                    </div>
+                  </div>
+                  <div *ngIf="submitted && f.phone.errors" class="error">
+                    <div *ngIf="f.phone.errors.required">Phone no is required</div>
+                    <div *ngIf="f.phone.errors.pattern">Please input valid Phone Number</div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" style="display: flex;flex-direction: column;"><label class="login-body-color" for="from-comments">Comments</label>
+                <div class="con-btn-size"><textarea class="form-control con-btn-size" id="from-cmd" style="height: 150px;" formControlName="fromcmd"></textarea></div>
+                <div *ngIf="submitted && f.fromcmd.errors" class="error">
+                  <div *ngIf="f.fromcmd.errors.required">Comments is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col"><button class="btn btn-primary btn-block btn-color-login" id="resetbtn" type="reset"><i class="fa fa-undo"></i> Reset</button></div>
+                  <div class="col"><button class="btn btn-primary btn-block btn-color-login" id="subbtn" type="submit">Submit <i class="fa fa-chevron-circle-right"></i></button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
