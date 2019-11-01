@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+title="Home";
   constructor() { }
   Slide1 ="Discover the best coffee shops in London1"
   Slide2 ="Discover the best coffee shops in London1"
   
+
   ngOnInit() {
   }
 
